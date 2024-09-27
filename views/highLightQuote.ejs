@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Highlighted Quote</title>
+</head>
+<body>
+  
+  <h1>Highlighted Quote</h1>
+
+  <% if (quote) { %>
+    <h2>Quote by <%= quote.author %>:</h2>
+    <p>
+      <%= quote.quote.replace(highlightText, `<strong>${highlightText}</strong>`) %>
+    </p>
+  <% } else if (errorMessage) { %>
+    <h2><%= errorMessage %></h2>
+  <% } %>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Author Random Form</title>
+</head>
+<body>
+  <h1>Submit Author for Random Quote</h1>
+
+  <form action="/authorRandom" method="POST">
+    <label for="author-name">Enter Author Name:</label>
+    <input type="text" id="author-name" name="author" required>
+    <button type="submit">Get Random Quote</button>
+  </form>
+
+  <% if (quote) { %>
+    <h2>Random Quote by <%= quote.author %>:</h2>
+    <p>"<%= quote.quote %>"</p>
+  <% } else if (errorMessage) { %>
+    <h2><%= errorMessage %></h2>
+  <% } %>
+
+</body>
+</html>

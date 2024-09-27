@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Document</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body>
+  <h1><% quotes.length %></h1>
+  <ul>
+    <% for (let i = 0; i < quotes.length; i++) { %>
+    <li><%= quotes[i].id %></li>
+    <li><%= quotes[i].quote %></li>
+    <li><%= quotes[i].author %></li>
+    <% } %>
+  </ul>
+   
+</body>
+</html>

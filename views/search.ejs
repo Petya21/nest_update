@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quote Search</title>
+</head>
+<body>
+  <h1>Search Quotes</h1>
+
+  <form action="/search" method="GET">
+    <label for="search-text">Enter text to search:</label>
+    <input type="text" id="search-text" name="text" value="<%= searchText %>" required>
+    <button type="submit">Search</button>
+  </form>
+
+  <% if (quotes.length > 0) { %>
+    <h2>Search Results:</h2>
+    <ul>
+      <% quotes.forEach(function(quote) { %>
+        <li><strong><%= quote.author %>:</strong> "<%= quote.quote %>"</li>
+      <% }); %>
+    </ul>
+  <% } else if (searchText) { %>
+    <p>No quotes found containing "<%= searchText %>".</p>
+  <% } %>
+
+</body>
+</html>
